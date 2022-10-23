@@ -4,7 +4,7 @@ import UjenziNavbar from './components/common/UjenziNavbar';
 function App() {
   return (
     <div className="App">
-     <UjenziNavbar />
+     welcome to ujenzi.
     </div>
   );
 }
