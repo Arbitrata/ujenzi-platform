@@ -7,8 +7,8 @@ class UjenziSignUpPage extends UjenziForm {
   state = {};
   render() {
     return (
-      <div className="w-[100vw] h-[800px] mx-w-[1428px] mx-h-[1117] pt-4 flex">
-        <div className="w-[47%] h-[100%] bg-ujenzi-white pl-[70px] block">
+      <div className="w-[100vw] h-[800px] mx-w-[1428px] mx-h-[1117] flex">
+        <div className="w-[47%] h-[100%] bg-ujenzi-white pl-[70px] block pt-4">
           <UjenziLogo />
           <div className="w-[490px] h-[550px] shadow mt-[60px] shadow-ujenzi-darkgray relative grid place-items-center">
             <img
@@ -30,7 +30,7 @@ class UjenziSignUpPage extends UjenziForm {
             </div>
           </div>
         </div>
-        <div className="w-[53%] h-[100%] bg-ujenzi-lightgreen pr-[70px]">
+        <div className="w-[53%] h-[100%] bg-ujenzi-lightgreen pt-4 pr-[70px]">
           <div className="h-[50px] w-[100%] flex place-items-center pl-[300px]">
             <span className="text-[16px] font-bold text-ujenzi-darkgray pr-4">
               Already have an account?
