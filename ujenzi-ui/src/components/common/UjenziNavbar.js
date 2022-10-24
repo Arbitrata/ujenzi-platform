@@ -40,7 +40,7 @@ export const NavDropDown = ({ dropTitle, dropItems, children }) => {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items
-          className={`flex absolute -ml-2 mt-6 ring-1 ring-ujenzi-blue rounded-md bg-ujenzi-white shadow-md shadow-ujenzi-darkgrey w-auto ${
+          className={`flex absolute -ml-2 mt-6 ring-1 ring-ujenzi-blue z-50 rounded-md bg-ujenzi-white shadow-md shadow-ujenzi-darkgrey w-auto ${
             children ? "w-auto" : ""
           }`}
         >
@@ -157,7 +157,7 @@ const UjenziNavbar = ({
   return (
     <>
       <nav
-        className={`flex items-center justify-between w-[100vw] h-[70px] bg-ujenzi-lightgrey shadow shadow-ujenzi-darkgrey ${
+        className={`flex items-center justify-between w-[100%] fixed px-6 h-[70px] bg-ujenzi-lightgreen z-50 border-b-ujenzi-darkgrey border shadow shadow-ujenzi-darkgrey ${
           navStyle ? navStyle : ""
         }`}
       >
