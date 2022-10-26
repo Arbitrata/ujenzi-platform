@@ -1,13 +1,15 @@
 import React from "react";
-import 'tw-elements';
-import { BsArrowBarRight, BsCart4 } from "react-icons/bs";
-import { FaRegObjectUngroup, FaSearch, FaSearchLocation } from "react-icons/fa";
+import "tw-elements";
+import { BsCart4 } from "react-icons/bs";
+import { FaArrowRight, FaRegObjectUngroup, FaSearch } from "react-icons/fa";
 import { RiUserLocationFill } from "react-icons/ri";
 import UjenziButton from "../common/UjenziButton";
 import UjenziIcon from "../common/UjenziIcon";
 import UjenziNavbar from "../common/UjenziNavbar";
 import UjenziSearch from "../common/UjenziSearch";
 import { UjenziCards } from "./../common/UjenziCards";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export const HeroSection = () => {
   return (
@@ -25,18 +27,20 @@ export const HeroSection = () => {
             </span>
           </div>
           <div className="flex justify-between w-[100%] absolute bottom-0 h-[60px] items-center pr-[160px]">
-            <UjenziButton
-              buttonText={"Be a Supplier"}
-              buttonIcon={true}
-              icon={<BsArrowBarRight />}
-              iconStyle={"ml-2"}
-            />
-            <UjenziButton
-              buttonText={"Order With Us"}
-              buttonIcon={true}
-              icon={<BsCart4 size={20} />}
-              iconStyle={"ml-2"}
-            />
+            <Link to="/suppliersignup">
+              <UjenziButton
+                buttonText={"Be a Supplier"}
+                buttonIcon={<FaArrowRight />}
+                iconStyle={"ml-2"}
+              />
+            </Link>
+            <Link to="/signin">
+              <UjenziButton
+                buttonText={"Order with us"}
+                buttonIcon={<BsCart4 size={20} />}
+                iconStyle={"ml-2"}
+              />
+            </Link>
           </div>
         </div>
         <div className="w-[50%] h-[100%] py-2 pl-12 pr-[70px]">
@@ -172,10 +176,58 @@ export function MostPopularSearch() {
 }
 
 export function OurPartnersSection() {
+  const logos1 = [
+    {
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwz08QKIid-h8Ag6u0VUWB4KLQdJOZzizHSg&usqp=CAU",
+      alt: "",
+    },
+    {
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNfr5B3YK2mY6LMP8MMTIo1IDUG9obyOPVow&usqp=CAU",
+      alt: "",
+    },
+    {
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4RX7JA6VsGosH2iAJRCf4GqAkKMUm9zk--A&usqp=CAU",
+      alt: "",
+    },
+    {
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwz08QKIid-h8Ag6u0VUWB4KLQdJOZzizHSg&usqp=CAU",
+      alt: "",
+    },
+    {
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwz08QKIid-h8Ag6u0VUWB4KLQdJOZzizHSg&usqp=CAU",
+      alt: "",
+    },
+  ];
+
+  const logos2 = [
+    {
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwz08QKIid-h8Ag6u0VUWB4KLQdJOZzizHSg&usqp=CAU",
+      alt: "",
+    },
+    {
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNfr5B3YK2mY6LMP8MMTIo1IDUG9obyOPVow&usqp=CAU",
+      alt: "",
+    },
+    {
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4RX7JA6VsGosH2iAJRCf4GqAkKMUm9zk--A&usqp=CAU",
+      alt: "",
+    },
+    {
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwz08QKIid-h8Ag6u0VUWB4KLQdJOZzizHSg&usqp=CAU",
+      alt: "",
+    },
+    {
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwz08QKIid-h8Ag6u0VUWB4KLQdJOZzizHSg&usqp=CAU",
+      alt: "",
+    },
+  ];
+
   return (
-    <div className=" bg-ujenzi-lightgreen w-[100vw] px-[70px] pt-[30px] h-[550px] block relative">
-      <div className="text-ujenzi-darkgray  px-[150px]">
-        <h1 className="font-extrabold text-[42px] text-center">Our Partners</h1>
+    <div className=" bg-ujenzi-lightgreen w-[100vw] px-[100px] pt-[20px] mt-4 h-[500px] block relative">
+      <div className="text-ujenzi-darkgray  px-[190px]">
+        <h1 className="font-extrabold text-[42px] text-center pb-6">
+          Our Partners
+        </h1>
         <span className="text-bold text-[18px] font-bold text-left">
           Lorem Ipsum simply dummy text of the printing type industry Lorem
           Ipsum simply dummy text of the printing type industry.Lorem Ipsum
@@ -185,25 +237,178 @@ export function OurPartnersSection() {
 
       <div
         id="carouselExampleSlidesOnly"
-        className="carousel slide relative mt-12 bg-ujenzi-white"
+        className="carousel slide relative mt-[70px]"
         data-bs-ride="carousel"
       >
-        <div className="carousel-inner relative w-[1000px] h-[150px] overflow-x-hidden">
-
-          <div className="carousel-item active relative float-left w-[200px] text-bold">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwz08QKIid-h8Ag6u0VUWB4KLQdJOZzizHSg&usqp=CAU"
-              className="block w-[100%] "
-              alt="Wild Landscape"
-            />
+        <div className="carousel-inner relative w-full h-[300px] flex  overflow-hidden">
+          <div className="carousel-item relative float-left active w-full h-[130px]">
+            <div className="flex w-full grid-cols-6 gap-10 justify-between h-full">
+              {logos1.map((logo) => (
+                <img
+                  key={logo.key}
+                  src={logo.logo}
+                  className="block w-[200px] shadow-md shadow-ujenzi-darkgray h-auto"
+                  alt=""
+                />
+              ))}
+            </div>
           </div>
 
-
+          <div className="carousel-item relative float-left  w-full h-[130px]">
+            <div className="flex w-full grid-cols-6 gap-10 justify-between h-full">
+              {logos2.map((logo) => (
+                <img
+                  key={logo.key}
+                  src={logo.logo}
+                  className="block w-[200px] shadow-md shadow-ujenzi-darkgray h-auto"
+                  alt=""
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
+export const TestimonialsSection = () => {
+  const testimonialsList = [
+    {
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQo7MZ9g8ijVtpZogXAENMnEf71y0pI8QKSw&usqp=CAU",
+      name: "Timo doe",
+      testimony:
+        " Lorem Ipsum simply dummy text of the printing type industry Lorem Ipsum simply dummy text of the printing type industry.Lorem Ipsum simply dummy text of the printing type industry.",
+    },
+    {
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQGtw-jzwnU9crOE2b5fB-LOuEvP_25isYBw&usqp=CAU",
+      name: "Jane doe",
+      testimony:
+        " Lorem Ipsum simply dummy text of the printing type industry Lorem Ipsum simply dummy text of the printing type industry.Lorem Ipsum simply dummy text of the printing type industry.",
+    },
+    {
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3VZLD2CASk3dlSCF7vSRzoUta4rLqih7sfg&usqp=CAU",
+      name: "Antony ",
+      testimony:
+        " Lorem Ipsum simply dummy text of the printing type industry Lorem Ipsum simply dummy text of the printing type industry.Lorem Ipsum simply dummy text of the printing type industry.",
+    },
+  ];
+
+  return (
+    <div className="w-[100vw] h-fit block place-content-center">
+      <div className="text-ujenzi-darkgray  px-[290px] mt-6">
+        <h1 className="font-extrabold text-ujenzi-blue text-[42px] text-center pb-2">
+          What our customers say about us
+        </h1>
+        <span className="text-bold text-[18px] font-bold text-left">
+          Lorem Ipsum simply dummy text of the printing type industry Lorem
+          Ipsum simply dummy text of the printing type industry.Lorem Ipsum
+          simply dummy text of the printing type industry.
+        </span>
+      </div>
+      <div className="w-full h-[50px] mt-[10px] pl-[74%]">
+        <button
+          className="carousel-control-prev "
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span
+            aria-hidden="true"
+            className="carousel-control-prev inline-block "
+          >
+            <UjenziIcon
+              borderPresent={true}
+              borderStyle={"bg-ujenzi-darkgray h-[40px] w-[40px] rounded-full"}
+              icon={<FiArrowLeft size={25} />}
+            />
+          </span>
+        </button>
+
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span
+            aria-hidden="true"
+            className="carousel-control-prev inline-block "
+          >
+            <UjenziIcon
+              borderPresent={true}
+              borderStyle={"bg-ujenzi-darkgray h-[40px] w-[40px] rounded-full"}
+              icon={<FiArrowRight size={25} />}
+            />
+          </span>
+        </button>
+      </div>
+
+      <div
+        id="carouselExampleControls"
+        class="carousel slide relative"
+        data-bs-ride="carousel"
+        data-bs-interval="false"
+      >
+        <div class="carousel-inner relative w-full overflow-hidden pt-[70px] pb-[30px] mt-4 px-[70px]">
+          <div className="carousel-item relative float-left active w-full h-fit pb-11">
+            <div className="flex w-full grid-cols-3 gap-4 justify-between h-full">
+              {testimonialsList.map((t) => (
+                <UjenziCards
+                  testimonialCard={true}
+                  imgSrc={t.image}
+                  title={t.name}
+                  description={t.testimony}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="carousel-item relative float-left w-full h-fit pb-11">
+            <div className="flex w-full grid-cols-3 gap-4 justify-between h-full">
+              {testimonialsList.map((t) => (
+                <UjenziCards
+                  testimonialCard={true}
+                  imgSrc={t.image}
+                  title={t.name}
+                  description={t.testimony}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const BottomSection = () => {
+  return (
+    <div className="w-[100%] h-[300px] grid bg-ujenzi-lightgreen place-content-center">
+      <div className="text-ujenzi-darkgray  px-[250px] mt-6">
+        <h1 className="font-extrabold text-[42px] text-center pb-2">
+          What our customers say about us
+        </h1>
+        <span className="text-bold text-[18px] font-bold text-left">
+          Lorem Ipsum simply dummy text of the printing type industry Lorem
+          Ipsum simply dummy text of the printing type industry.Lorem Ipsum
+          simply dummy text of the printing type industry.
+        </span>
+      </div>
+      <div className="grid place-content-center mt-10">
+      <Link to='/signup'>
+        <UjenziButton
+          buttonText={"Join Us Today"}
+          buttonIcon={<FaArrowRight />}
+          iconStyle={"ml-2"}
+        />
+        </Link>
+      </div>
+    </div>
+  );
+};
 
 export default function UjenziLandingPage() {
   return (
@@ -213,6 +418,8 @@ export default function UjenziLandingPage() {
         <HeroSection />
         <MostPopularSearch />
         <OurPartnersSection />
+        <TestimonialsSection />
+        <BottomSection />
       </div>
     </div>
   );

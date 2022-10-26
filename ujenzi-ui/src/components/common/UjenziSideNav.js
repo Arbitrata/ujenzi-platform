@@ -10,7 +10,7 @@ export default function UjenziSideNav({
   supplierSideNav,
 }) {
   return (
-    <div className="w-[300px] h-[100vh] bg-ujenzi-lightgreen rounded-[10px] absolute ml-11 ">
+    <div className="w-[300px] fixed h-[100vh] bg-ujenzi-lightgreen rounded-[10px] ml-11 mb-[50px] ">
       {supplierSideNav ? (
         <h2 className="text-[25px] text-center font-extrabold text-ujenzi-darkgray ml-6 pr-6 mt-14 truncate">
           {profileName}
@@ -24,7 +24,7 @@ export default function UjenziSideNav({
               borderStyle={"ml-[230px] mt-[16px]"}
             />
             <div className="block place-content-center mt-[14px]">
-              <UjenziAvater imgStyling={"h-[100px] w-[100px] ml-[2px]"} />
+              <UjenziAvater imgStyling={"h-[100px] w-[100px] ml-[2px]"} imgSrc={profileImage} />
               <div className="self-center ">
               </div>
             </div>
@@ -34,7 +34,7 @@ export default function UjenziSideNav({
           </div>
         </>
       )}
-      <div className={`"ml-[40px] mt-[130px]" ${supplierSideNav ? "mt-[50px] ml-[40px]" :""}`}>{navLink}</div>
+      <div className={`"ml-[40px] mt-[120px] " ${supplierSideNav ? "mt-[50px] ml-[40px] " :""}`}>{navLink}</div>
     </div>
   );
 }

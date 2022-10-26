@@ -11,7 +11,7 @@ export const UjenziNavlink = ({
 }) => {
   return (
     <div
-      className={`text-ujenzi-darkgrey h-[50px] w-fit px-6 py-2 rounded-[5px] hover:bg-ujenzi-white mr-[15px] mt-[10px] grid place-content-center ${
+      className={`text-ujenzi-darkgrey h-[50px] ml-5 hover:text-ujenzi-blue w-fit px-6 py-2 rounded-[5px] hover:bg-ujenzi-white mr-[15px] mt-[10px] grid place-content-center ${
         navLinkStyle ? navLinkStyle : ""
       }`}
     >
@@ -21,7 +21,7 @@ export const UjenziNavlink = ({
       >
         {icon}
         <h2
-          className={`text-[20px] font-normal tracking-widest text-youngtal-dark-gray ml-[15px] active:text-black ${
+          className={`text-[20px] font-normal hover:text-ujenzi-blue tracking-widest text-ujenzi-darkgray ml-[15px] active:text-black ${
             linkTitleStyle ? linkTitleStyle : ""
           }`}
         >

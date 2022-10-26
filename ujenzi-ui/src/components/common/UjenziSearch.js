@@ -8,7 +8,7 @@ export default function UjenziSearch({
   return (
     <div className="search">
       <div className="relative">
-        <span className="absolute inset-y-0 left-0 flex items-center pl-4">
+        <span className="absolute inset-y-0 left-0 flex items-center pl-6">
           {iconPresent}
         </span>
         <input

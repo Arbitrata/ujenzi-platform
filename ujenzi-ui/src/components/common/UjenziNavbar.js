@@ -111,7 +111,7 @@ const UjenziNavbar = ({
     { icon: <BsPhone />, path: "/", text: "Contact us" },
   ];
   const profilelist = [
-    { icon: <RiDashboardFill />, path: "/", text: "Dashboard" },
+    { icon: <RiDashboardFill />, path: "/dashboard", text: "Dashboard" },
     { icon: <FaSignOutAlt />, path: "/", text: "Sign out" },
   ];
   const activeItemStyle = "flex items-center text-ujenzi-darkgrey";
@@ -157,7 +157,7 @@ const UjenziNavbar = ({
   return (
     <>
       <nav
-        className={`flex items-center justify-between w-[100%] fixed px-6 h-[70px] bg-ujenzi-lightgreen z-50 border-b-ujenzi-darkgrey border shadow shadow-ujenzi-darkgrey ${
+        className={`flex items-center justify-between w-[100%] fixed px-6 h-[70px] bg-ujenzi-lightgreen z-50  shadow-sm shadow-ujenzi-darkgrey ${
           navStyle ? navStyle : ""
         }`}
       >
@@ -300,7 +300,7 @@ const UjenziNavbar = ({
             ) : (
               <>
                 <li>
-                  <Link to="#" className={navItemStyle}>
+                  <Link to="/signin" className={navItemStyle}>
                     <UjenziButton
                       buttonStyle={
                         "hover:bg-ujenzi-blue bg-[#ffffff] hover:text-ujenzi-white text-ujenzi-blue"
@@ -310,7 +310,7 @@ const UjenziNavbar = ({
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/"}>
+                  <Link to={"/signup"}>
                     <UjenziButton buttonText="Register" buttonStyle="" />
                   </Link>
                 </li>

@@ -2,6 +2,7 @@ import React from "react";
 import UjenziForm from "./../common/UjenziForm";
 import UjenziButton from "./../common/UjenziButton";
 import { UjenziLogo } from "./../common/UjenziLogo";
+import { Link } from 'react-router-dom';
 
 class UjenziSuppliersSignUpPage extends UjenziForm {
   state = {};
@@ -13,14 +14,17 @@ class UjenziSuppliersSignUpPage extends UjenziForm {
           <div className=" flex justify-between place-items-center">
             <span className="text-[16px] font-bold text-ujenzi-darkgray pr-4">
               Already have an account?
-            </span>
-            <UjenziButton
+            </span>   
+            <Link to='/signin'>
+              <UjenziButton
               handleSubmit={""}
-              buttonText={"Sign in"}
+              buttonText={"Sign In"}
               buttonStyle={
                 "bg-[#FFFFFF] hover:text-[#FFFFFF] hover:bg-ujenzi-blue text-ujenzi-blue"
               }
             />
+            </Link>
+            
           </div>
         </div>
         <div className="w-[100vw] h-[90%] grid place-items-center pt-10">
