@@ -5,8 +5,9 @@ export default function UjenziButton({
   buttonStyle,
   handleSubmit,
   buttonText,
-  buttonIcon,
+  buttonIcon=true,
   iconStyle,
+
 }) {
   return (
     <button
@@ -18,7 +19,7 @@ export default function UjenziButton({
     >
       {buttonText}
       <span className={`${iconStyle ? iconStyle : ""}`}>
-        {buttonIcon && buttonIcon ? buttonIcon : ""}
+        { buttonIcon ? buttonIcon : ""}
       </span>
     </button>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import UjenziButton from "../common/UjenziButton";
 import { UjenziLogo } from "../common/UjenziLogo";
 import UjenziForm from "./../common/UjenziForm";
@@ -20,13 +21,16 @@ class UjenziSignUpPage extends UjenziForm {
               <h1 className="text-[20px] font-bold text-ujenzi-darkgray text-center mx-12">
                 Are you Looking to be a Supplier?
               </h1>
-              <UjenziButton
+              <Link to='/suppliersignup'>
+                <UjenziButton
                 handleSubmit={""}
                 buttonText={"Sign Up Here"}
                 buttonStyle={
                   "bg-[#FFFFFF] hover:text-[#FFFFFF] hover:bg-ujenzi-blue text-ujenzi-blue"
                 }
               />
+              </Link>
+              
             </div>
           </div>
         </div>
@@ -35,13 +39,15 @@ class UjenziSignUpPage extends UjenziForm {
             <span className="text-[16px] font-bold text-ujenzi-darkgray pr-4">
               Already have an account?
             </span>
-            <UjenziButton
+            <Link to='/signin'>
+              <UjenziButton
               handleSubmit={""}
               buttonText={"Sign in"}
               buttonStyle={
                 "bg-[#FFFFFF] hover:text-[#FFFFFF] hover:bg-ujenzi-blue text-ujenzi-blue"
               }
             />
+            </Link>
           </div>
           <form onSubmit={this.handleSubmit} className="w-[100%] h-[90%] block pt-[30px] pl-[80px]">
             {this.renderInput("username", "Full Name", "text", "w-[550px]")}
