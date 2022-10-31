@@ -413,7 +413,7 @@ export const BottomSection = () => {
 export default function UjenziLandingPage() {
   return (
     <div className="block z-10">
-      <UjenziNavbar buyersNavbar={true} />
+      <UjenziNavbar />
       <div className=" pt-[72px]">
         <HeroSection />
         <MostPopularSearch />

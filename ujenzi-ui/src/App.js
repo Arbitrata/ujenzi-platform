@@ -6,6 +6,7 @@ import UjenziSignUpPage from './components/pages/UjenziSignUpPage';
 import UjenziSingInPage from './components/pages/UjenziSingInPage';
 import UjenziSuppliersSignUpPage from './components/pages/UjenziSuppliersSignUpPage';
 import UjenziBuyersDashBoardpage from "./components/pages/UjenziBuyersMyAccountpage";
+import UjenziSuppliersSignUpPage2 from './components/pages/UjenziSuppliersSignUpPage2';
 
 function App() {
   return <div>
@@ -13,7 +14,7 @@ function App() {
     <Route path="/" element={<UjenziLandingPage />} />
     <Route path="/signup" element={<UjenziSignUpPage />} />
     <Route path="/suppliersignup" element={<UjenziSuppliersSignUpPage />} />
-    <Route path="/suppliersignup1" element={<UjenziSignUpPage />} />
+    <Route path="/suppliersignup1" element={<UjenziSuppliersSignUpPage2 />} />
     <Route path="/signin" element={<UjenziSingInPage />} />
     <Route path="/dashboard" element={<UjenziBuyersDashBoardpage />} />
     </Routes>
