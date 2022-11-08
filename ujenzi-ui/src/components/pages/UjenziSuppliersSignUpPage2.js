@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import UjenziForm from "./../common/UjenziForm";
 import UjenziButton from "./../common/UjenziButton";
 import { UjenziLogo } from "./../common/UjenziLogo";
@@ -6,7 +6,7 @@ import { Link, Navigate } from "react-router-dom";
 import UjenziInput from "../common/UjenziInput";
 import Joi from "joi-browser";
 
-class UjenziSuppliersSignUpPage2 extends Component {
+class UjenziSuppliersSignUpPage2 extends UjenziForm {
   state = {
     data: {
       coverimage: " ",
@@ -14,11 +14,9 @@ class UjenziSuppliersSignUpPage2 extends Component {
       description: " ",
     },
     errors: {},
-    submitted:false,
+    submitted: false,
     imageUrl: "",
   };
-
-  
 
   uploadImage = (e) => {
     const file = e.target.files;
@@ -55,12 +53,12 @@ class UjenziSuppliersSignUpPage2 extends Component {
             </Link>
           </div>
           <form className="w-[100%] h-[90%] block pt-[90px] pl-[80px]">
-            {/* {this.renderSelect("location", "Select Location", " ", "w-[550px]")}
+            {this.renderSelect("location", "Select Location", " ", "w-[550px]")}
             {this.renderTextarea(
               "description",
               "Type a short Description Here",
               "w-[550px]"
-            )} */}
+            )}
             <div className="flex grid-cols-2 gap-3 justify-between pr-6 pt-4">
               <Link to={"/"}>
                 <UjenziButton

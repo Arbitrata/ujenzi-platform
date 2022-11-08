@@ -7,7 +7,7 @@ import Joi from "joi-browser";
 class UjenziForm extends Component {
   state = {
     data: {},
-    error: {},
+    errors: {},
   };
 
 
@@ -34,11 +34,10 @@ class UjenziForm extends Component {
     const errors = this.validate();
     this.setState({ errors: errors || {} });
     if (errors) return;
-
     this.doSubmit();
   };
 
-  handleChange = ({ currentTarget: input,  newValue }) => {
+  handleChange = ({ currentTarget: input}) => {
     const errors = { ...this.state.errors };
     const errorMessage = this.validateProperty(input);
     if (errorMessage) errors[input.name] = errorMessage;
@@ -56,7 +55,7 @@ class UjenziForm extends Component {
         name={name}
         label={label}
         value={data[name]}
-        error={errors[name]}
+        errors={errors[name]}
         inputType={type}
         onChange={this.handleChange}
         inputStyle={style}
@@ -92,9 +91,6 @@ class UjenziForm extends Component {
   renderButton = (text) => {
     return (
       <UjenziButton
-        buttonStyle={
-          "bg-[#FFFFFF] hover:text-[#FFFFFF] hover:bg-ujenzi-blue text-ujenzi-blue"
-        }
         buttonText={text}
         handleSubmit={this.handleSubmit}
       />

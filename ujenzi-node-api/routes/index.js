@@ -1,8 +1,11 @@
-const { Router } = require("express");
 const express = require("express");
+const { tryCatch } = require("../helpers");
 
-const router = Router();
+const router = express.Router();
 
-module.exports = {
-    router
-}
+const { signInHandler, signUpHandler } = require("../controllers");
+
+router.post("/signin", tryCatch(signInHandler));
+router.post("/signup", tryCatch(signUpHandler));
+
+module.exports = router;

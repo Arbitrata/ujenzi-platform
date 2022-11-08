@@ -9,6 +9,7 @@ export default function UjenziSideNav({
   navLink,
   supplierSideNav,
 }) {
+
   return (
     <div className="w-[300px] fixed h-[100vh] bg-ujenzi-lightgreen rounded-[10px] ml-11 mb-[50px] ">
       {supplierSideNav ? (

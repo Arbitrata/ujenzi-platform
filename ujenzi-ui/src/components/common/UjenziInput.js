@@ -6,7 +6,7 @@ export default function UjenziInput({
   index,
   value,
   name,
-  error,
+  errors,
   inputStyle,
   required,
   onChange,
@@ -23,7 +23,7 @@ export default function UjenziInput({
 
   return (
     <div className="block mt-4">
-      <label className=" text-ujenzi-darkgray font-medium text-left text-[15px] block pb-1">
+      <label className=" text-ujenzi-darkgray font-semibold text-left text-[13px] block pb-0">
         {label}
       </label>
       {textarea ? (
@@ -35,7 +35,6 @@ export default function UjenziInput({
         />
       ) : (
         <input
-        id='noWhiteSpaceAtTheStart' oninput="validate(this)"
           key={index}
           name={name}
           type={inputType}
@@ -44,15 +43,14 @@ export default function UjenziInput({
           bg-ujenzi-white border border-ujenzi-blue  shadow-sm cursor-text focus:outline-none ${
             inputStyle ? inputStyle : ""
           }`}
-          
           required={required}
           onChange={onChange}
           placeholder={placeholder}
         />
       )}
-      {error && (
+      {errors && (
         <div className="text-[12px] w-[100%] font-bold text-[#FF3000]">
-          {error}
+          {errors}
         </div>
       )}
     </div>

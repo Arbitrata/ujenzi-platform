@@ -7,9 +7,12 @@ import UjenziSingInPage from './components/pages/UjenziSingInPage';
 import UjenziSuppliersSignUpPage from './components/pages/UjenziSuppliersSignUpPage';
 import UjenziBuyersDashBoardpage from "./components/pages/UjenziBuyersMyAccountpage";
 import UjenziSuppliersSignUpPage2 from './components/pages/UjenziSuppliersSignUpPage2';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return <div>
+       <ToastContainer />
     <Routes>
     <Route path="/" element={<UjenziLandingPage />} />
     <Route path="/signup" element={<UjenziSignUpPage />} />
@@ -18,6 +21,7 @@ function App() {
     <Route path="/signin" element={<UjenziSingInPage />} />
     <Route path="/dashboard" element={<UjenziBuyersDashBoardpage />} />
     </Routes>
+   
   </div>;
 }
 

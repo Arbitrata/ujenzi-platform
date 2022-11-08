@@ -24,21 +24,21 @@ export const MyAccountPage = () => {
       sender: "Ruiru mabati",
       notificationtext:
         "n publishing and graphic dhe visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
-      amount: 1234,
+      amount: 1134,
     },
     {
       date: Date(),
       sender: "Thika road bricks",
       notificationtext:
         "n rm of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
-      amount: 1234,
+      amount: 1004,
     },
     {
       date: Date(),
       sender: "Simba ",
       notificationtext:
         "nisual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
-      amount: 1234,
+      amount: 1200,
     },
   ];
 
@@ -77,6 +77,7 @@ export const MyAccountPage = () => {
             <Tab.Panel>
               {notifications.map((notification) => (
                 <UjenziCards
+                key={notification.sender || notification.notificationtext || notification.amount}
                   notificationCard={true}
                   currentCost={notification.amount}
                   description={notification.notificationtext}
@@ -116,6 +117,7 @@ function UjenziBuyersDashBoardpage() {
               <>
                 {links.map((link) => (
                   <UjenziNavlink
+                  key={link.linkIcon || link.linkTitle || link.to}
                     icon={link.linkIcon}
                     linkTitle={link.linkTitle}
                     to={link.to}

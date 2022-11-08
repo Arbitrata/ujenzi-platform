@@ -178,46 +178,46 @@ export function MostPopularSearch() {
 export function OurPartnersSection() {
   const logos1 = [
     {
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwz08QKIid-h8Ag6u0VUWB4KLQdJOZzizHSg&usqp=CAU",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8Rp4lmZscsOaKImBw4Mh2bUSrDjwo-5Fbtg&usqp=CAU",
       alt: "",
     },
     {
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNfr5B3YK2mY6LMP8MMTIo1IDUG9obyOPVow&usqp=CAU",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7XaroNEVIQIYgu1hXQFec5AJ-0ek4hGRV2A&usqp=CAU",
       alt: "",
     },
     {
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4RX7JA6VsGosH2iAJRCf4GqAkKMUm9zk--A&usqp=CAU",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdUvT2v-Rl1VFWLk8DxxhLMaWv6Fm7WYYpCw&usqp=CAU",
       alt: "",
     },
     {
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwz08QKIid-h8Ag6u0VUWB4KLQdJOZzizHSg&usqp=CAU",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxSbH8xe_eoykeWSjxrP38C2M0hkYRAdDyvQ&usqp=CAU",
       alt: "",
     },
     {
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwz08QKIid-h8Ag6u0VUWB4KLQdJOZzizHSg&usqp=CAU",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXN-vIE0OVB_mjlC9EsJDG3ZHFTxynyw5MuQ&usqp=CAU",
       alt: "",
     },
   ];
 
   const logos2 = [
     {
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwz08QKIid-h8Ag6u0VUWB4KLQdJOZzizHSg&usqp=CAU",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShEwbJ49-wIc6MuZcLhZI9EIunBh1Lwwx7uw&usqp=CAU",
       alt: "",
     },
     {
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNfr5B3YK2mY6LMP8MMTIo1IDUG9obyOPVow&usqp=CAU",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDFH9xjgQ2EYypgQYt5TiMbLNpzn2PgybWnA&usqp=CAU",
       alt: "",
     },
     {
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4RX7JA6VsGosH2iAJRCf4GqAkKMUm9zk--A&usqp=CAU",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRnn-yabaEXRZjvwD_lKjp6mb8UDGMBGtgXQ&usqp=CAU",
       alt: "",
     },
     {
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwz08QKIid-h8Ag6u0VUWB4KLQdJOZzizHSg&usqp=CAU",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdPq3SVBYViole-XtMW4vQEtJlJFhQGo6AUA&usqp=CAU",
       alt: "",
     },
     {
-      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwz08QKIid-h8Ag6u0VUWB4KLQdJOZzizHSg&usqp=CAU",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGCvtqtbi-GT-wQbuts2422hDZ6VBsjdTvSg&usqp=CAU",
       alt: "",
     },
   ];
@@ -276,21 +276,21 @@ export const TestimonialsSection = () => {
   const testimonialsList = [
     {
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQo7MZ9g8ijVtpZogXAENMnEf71y0pI8QKSw&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXoSFMOMEymFeYRnFIOcD00Z5T2z8BXhlQWQ&usqp=CAU",
       name: "Timo doe",
       testimony:
         " Lorem Ipsum simply dummy text of the printing type industry Lorem Ipsum simply dummy text of the printing type industry.Lorem Ipsum simply dummy text of the printing type industry.",
     },
     {
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQGtw-jzwnU9crOE2b5fB-LOuEvP_25isYBw&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkeGWHCJEVhL9m0NNJdAxfc0GH9bCPhsnfBw&usqp=CAU",
       name: "Jane doe",
       testimony:
         " Lorem Ipsum simply dummy text of the printing type industry Lorem Ipsum simply dummy text of the printing type industry.Lorem Ipsum simply dummy text of the printing type industry.",
     },
     {
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3VZLD2CASk3dlSCF7vSRzoUta4rLqih7sfg&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQldvRkZUPji7xFW6nkKh43GKb3-m-Ns03iEg&usqp=CAU",
       name: "Antony ",
       testimony:
         " Lorem Ipsum simply dummy text of the printing type industry Lorem Ipsum simply dummy text of the printing type industry.Lorem Ipsum simply dummy text of the printing type industry.",
@@ -336,7 +336,7 @@ export const TestimonialsSection = () => {
         >
           <span
             aria-hidden="true"
-            className="carousel-control-prev inline-block "
+            className="carousel-control-next inline-block "
           >
             <UjenziIcon
               borderPresent={true}
@@ -366,6 +366,7 @@ export const TestimonialsSection = () => {
               ))}
             </div>
           </div>
+          
           <div className="carousel-item relative float-left w-full h-fit pb-11">
             <div className="flex w-full grid-cols-3 gap-4 justify-between h-full">
               {testimonialsList.map((t) => (
