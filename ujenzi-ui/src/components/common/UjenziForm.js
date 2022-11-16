@@ -25,7 +25,7 @@ class UjenziForm extends Component {
     const obj = { [name]: value };
     const schema = { [name]: this.schema[name] };
     const { error } = Joi.validate(obj, schema);
-    return error ? error.details[0].message : null;
+    return error ? error.details[0].message : "";
   };
 
   handleSubmit = (e) => {

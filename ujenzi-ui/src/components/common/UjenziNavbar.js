@@ -1,5 +1,5 @@
 import { Menu, Transition } from "@headlessui/react";
-import { Fragment } from "react";
+import { Fragment, useState,useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 import {
@@ -114,6 +114,9 @@ const UjenziNavbar = ({
     { icon: <RiDashboardFill />, path: "/dashboard", text: "Dashboard" },
     { icon: <FaSignOutAlt />, path: "/", text: "Sign out" },
   ];
+
+  
+
   const activeItemStyle = "flex items-center text-ujenzi-darkgrey";
   const navItemStyle = "flex items-center";
 
@@ -172,7 +175,7 @@ const UjenziNavbar = ({
           >
             <li>
               <NavLink
-                to="/"
+                to="/buyerspage"
                 className={({ isActive }) =>
                   isActive ? activeItemStyle : navItemStyle
                 }
@@ -183,7 +186,7 @@ const UjenziNavbar = ({
 
             <li>
               <NavLink
-                to="/"
+                to="#"
                 className={({ isActive }) =>
                   isActive ? activeItemStyle : navItemStyle
                 }
@@ -197,7 +200,7 @@ const UjenziNavbar = ({
 
             <li>
               <NavLink
-                to="/"
+                to="#"
                 className={({ isActive }) =>
                   isActive ? activeItemStyle : navItemStyle
                 }
@@ -211,7 +214,7 @@ const UjenziNavbar = ({
 
             <li>
               <NavLink
-                to="/"
+                to="#"
                 className={({ isActive }) =>
                   isActive ? activeItemStyle : navItemStyle
                 }
@@ -223,7 +226,7 @@ const UjenziNavbar = ({
 
             <li>
               <NavLink
-                to="/"
+                to="#"
                 className={({ isActive }) =>
                   isActive ? activeItemStyle : navItemStyle
                 }

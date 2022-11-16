@@ -5,8 +5,8 @@ const apiEndPonit = "http://localhost:5005/api/v1/signin";
 
 http.setJwt(getJwt());
 
-export async function login(email, password_hash) {
-  const { data: jwt } = await http.post(apiEndPonit , { email, password_hash });
+export async function login(email, password) {
+  const { data: jwt } = await http.post(apiEndPonit, { email, password });
   localStorage.setItem("token", jwt);
 }
 

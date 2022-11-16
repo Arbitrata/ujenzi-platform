@@ -4,21 +4,20 @@ import UjenziButton from "./../common/UjenziButton";
 import UjenziForm from "./../common/UjenziForm";
 import { Link, Navigate } from "react-router-dom";
 import Joi from "joi-browser";
-import auth from "../services/authService";
 
 class UjenziSingInPage extends UjenziForm {
   state = {
     data: {
-      email: " ",
-      password_hash: " ",
+      email: "",
+      password: "",
     },
     errors: {},
-    setLogin:false
+    error: "",
   };
 
   schema = {
     email: Joi.string().required().label("Useremail").email(),
-    password_hash: Joi.string().required().label("Password").min(6),
+    password: Joi.string().required().label("Password").min(6),
   };
 
   doSubmit = async () => {
@@ -26,25 +25,31 @@ class UjenziSingInPage extends UjenziForm {
       const response = await fetch("http://localhost:5005/api/v1/signin", {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify(this.state.data)
+        body: JSON.stringify(this.state.data),
       });
-      const perseRes = await response.json()
-      console.log(perseRes)
-      localStorage.setItem("token",perseRes.authorization_token);
-      window.location = "/dashboard"
-    } catch (err) {
-      console.log( err.message );
-      // if (ex.response && ex.response.status === 400) {
-      //   const errors = { ...this.state.errors };
-      //   errors.email = ex.response.data;
-      //   console.log( this.state.errors.message );
-      //   this.setState({ errors });
-      // }
+      const parseRes = await response.json();
+
+      if (!parseRes.authorization_token) {
+        // const error = { ...this.state.error };
+        // const message = " wrong password or username"
+        // this.setState({ error:error });
+         return;
+      } else {
+        localStorage.setItem("token", parseRes.authorization_token);
+        window.location = "/buyerspage";
+        return;
+      }
+    } catch (ex) {
+      if (ex.response && ex.response.status === 400) {
+        const errors = { ...this.state.errors };
+        errors.email = ex.response.data;
+        console.log(this.state.errors.message);
+        this.setState({ errors });
+      }
     }
   };
 
   render() {
-     <Navigate replace to="/dashboard" />;
     return (
       <div className="w-[100vw] h-[100vh] max-h-[700px] mx-w-[1728px] mx-h-[1117] bg-ujenzi-darkgray flex">
         <div className="w-[47%] h-[100%] bg-ujenzi-white pl-[130px] pt-3 block">
@@ -72,9 +77,9 @@ class UjenziSingInPage extends UjenziForm {
           >
             {this.renderInput("email", "Email", "email", "w-[450px]")}
             {this.renderInput(
-              "password_hash",
+              "password",
               "Enter Your Password",
-              "text",
+              "password",
               "w-[450px]"
             )}
             <div className="flex grid-cols-2 gap-3 justify-between w-[450px] pt-6">
@@ -83,7 +88,11 @@ class UjenziSingInPage extends UjenziForm {
               </Link>
               {this.renderButton("Sign In")}
             </div>
-            {this.state.setLogin && <Navigate replace to="/dashboard" />}
+            {this.state.error && (
+              <div className="text-[12px] w-[100%] font-bold text-[#FF3000]">
+                {this.state.error}
+              </div>
+            )}
           </form>
         </div>
       </div>

@@ -1,6 +1,7 @@
-const { signInHandler, signUpHandler } = require("./authenticationHandler");
+const { signInHandler, signUpHandler, signOutHandler } = require("./authenticationHandler");
 
 module.exports = {
   signInHandler,
   signUpHandler,
+  signOutHandler,
 };

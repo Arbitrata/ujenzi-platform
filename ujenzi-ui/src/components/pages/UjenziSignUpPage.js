@@ -11,9 +11,9 @@ class UjenziSignUpPage extends UjenziForm {
   state = {
     data: {
       fullname: "",
-      email: " ",
+      email: "",
       phonenumber: "",
-      password_hash: "",
+      password: "",
       confirmpassword: "",
     },
     errors: {},
@@ -23,9 +23,9 @@ class UjenziSignUpPage extends UjenziForm {
     fullname: Joi.string().required().label("User Name").min(5),
     email: Joi.string().required().label("User Email").email(),
     phonenumber: Joi.string().required().label("Phone Number").min(10),
-    password_hash: Joi.string().required().label("Password").min(5),
+    password: Joi.string().required().label("Password").min(5),
     confirmpassword: Joi.any()
-      .valid(Joi.ref("password_hash"))
+      .valid(Joi.ref("password"))
       .required()
       .label("Confirm Password")
       .options({ language: { any: { allowOnly: "must match password" } } }),
@@ -36,26 +36,17 @@ class UjenziSignUpPage extends UjenziForm {
       const response = await fetch("http://localhost:5005/api/v1/signup", {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify(this.state.data)
+        body: JSON.stringify(this.state.data),
       });
-      const perseRes = await response.json()
-      localStorage.setItem("token",perseRes.authorization_token);
-      window.location = "/dashboard"
+      const perseRes = await response.json();
+      localStorage.setItem("token", perseRes.authorization_token);
+      if (!perseRes.authorization_token) {
+     return;
+      }
+      window.location = "/buyerspage";
     } catch (err) {
       console.log(err.message);
     }
-    // try {
-    //   const response = await userService.register(this.state.data);
-    //   auth.loginWithJwt(response.headers["x-auth-token"]);
-    //   window.location = "/dashboard";
-
-    // } catch (ex) {
-    //   if (ex.response && ex.response.status === 400) {
-    //     const errors = { ...this.state.errors };
-    //     errors.email = ex.response.data;
-    //     this.setState({ errors });
-    //   }
-    // }
   };
 
   render() {
@@ -98,7 +89,7 @@ class UjenziSignUpPage extends UjenziForm {
             className="w-[550px] h-[90%] block pt-[40px] pl-[100px]"
           >
             {this.renderInput("fullname", "Full Name", "text", "w-[450px]")}
-            {this.renderInput("email", "Email", "email", "w-[450px]")}
+            {this.renderInput("email", "Email", "text", "w-[450px]")}
             {this.renderInput(
               "phonenumber",
               "Phone Number",
@@ -107,18 +98,23 @@ class UjenziSignUpPage extends UjenziForm {
             )}
             <div className="flex grid-cols-2 gap-3">
               {this.renderInput(
-                "password_hash",
+                "password",
                 "Password",
-                "text",
+                "password",
                 "w-[220px]"
               )}
               {this.renderInput(
                 "confirmpassword",
                 "Confirm Password",
-                "text",
+                "password",
                 "w-[220px]"
               )}
             </div>
+            {/* {this.state.error && (
+              <div className="text-[12px] w-[100%] font-bold text-[#FF3000]">
+                {this.state.error}
+              </div>
+            )} */}
             <div className="flex grid-cols-2 gap-3 w-[450px] justify-between pt-4">
               <Link to={"/"}>
                 <UjenziButton buttonText={"back"} />

@@ -7,7 +7,7 @@ export function register(user) {
     email: user.email,
     fullname: user.fullname,
     phonenumber: user.phonenumber,
-    password_hash: user.password_hash,
+    password: user.password,
   });
 }
 
