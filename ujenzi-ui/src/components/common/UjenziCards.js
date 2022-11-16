@@ -122,7 +122,7 @@ export const UjenziCards = ({
                 <div>
                   <UjenziButton
                     buttonStyle={
-                      "h-[35px] text-ujenzi-blue text-[10px] mt-1 hover:bg-ujenzi-blue hover:text-ujenzi-white bg-[#ffffff]"
+                      "h-[35px] text-ujenzi-blue text-[10px] mt-1 hover:bg-ujenzi-blue hover:text-[#ffffff] bg-[#ffffff]"
                     }
                     buttonText={"Shop"}
                   />

@@ -20,6 +20,8 @@ import { UjenziLogo } from "./UjenziLogo";
 import UjenziIcon from "./UjenziIcon";
 import UjenziAvater from "./UjenziAvater";
 
+const isUser = localStorage.getItem("token")
+
 export const NavDropDown = ({ dropTitle, dropItems, children }) => {
   return (
     <Menu as="div" className="relative inline-block text-left">
@@ -175,7 +177,7 @@ const UjenziNavbar = ({
           >
             <li>
               <NavLink
-                to="/buyerspage"
+                to={`${isUser ? "/buyerspage" : "/"}`}
                 className={({ isActive }) =>
                   isActive ? activeItemStyle : navItemStyle
                 }
@@ -306,7 +308,7 @@ const UjenziNavbar = ({
                   <Link to="/signin" className={navItemStyle}>
                     <UjenziButton
                       buttonStyle={
-                        "hover:bg-ujenzi-blue bg-[#ffffff] hover:text-ujenzi-white text-ujenzi-blue"
+                        "hover:bg-ujenzi-blue bg-[#ffffff] hover:text-[#ffffff] text-ujenzi-blue"
                       }
                       buttonText={"Sign in"}
                     />
