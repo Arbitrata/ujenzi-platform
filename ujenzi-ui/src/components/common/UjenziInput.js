@@ -1,11 +1,12 @@
 import React from "react";
 
+
 export default function UjenziInput({
   label,
   index,
   value,
   name,
-  error,
+  errors,
   inputStyle,
   required,
   onChange,
@@ -14,9 +15,15 @@ export default function UjenziInput({
   textarea,
   textareaStyle,
 }) {
+
+  function validate(input){
+    if(/^\s/.test(input.value))
+      input.value = '';
+  }
+
   return (
     <div className="block mt-4">
-      <label className=" text-ujenzi-darkgray font-medium text-left text-md block pb-1">
+      <label className=" text-ujenzi-darkgray font-semibold text-left text-[13px] block pb-0">
         {label}
       </label>
       {textarea ? (
@@ -36,15 +43,14 @@ export default function UjenziInput({
           bg-ujenzi-white border border-ujenzi-blue  shadow-sm cursor-text focus:outline-none ${
             inputStyle ? inputStyle : ""
           }`}
-          id={label}
           required={required}
           onChange={onChange}
           placeholder={placeholder}
         />
       )}
-      {error && (
-        <div role="alert" className="block text-[13px] font-medium text-[]">
-          {error}
+      {errors && (
+        <div className="text-[12px] w-[100%] font-bold text-[#FF3000]">
+          {errors}
         </div>
       )}
     </div>

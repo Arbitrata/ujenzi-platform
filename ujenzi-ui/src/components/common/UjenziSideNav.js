@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment, useState, useEffect } from "react";
 import { FiEdit } from "react-icons/fi";
 import UjenziAvater from "./UjenziAvater";
 import UjenziIcon from "./UjenziIcon";
@@ -9,8 +9,9 @@ export default function UjenziSideNav({
   navLink,
   supplierSideNav,
 }) {
+
   return (
-    <div className="w-[300px] fixed h-[100vh] bg-ujenzi-lightgreen rounded-[10px] ml-11 mb-[50px] ">
+    <div className="w-[300px] h-[100vh] bg-ujenzi-lightgreen rounded-[10px] ml-11 mb-[50px] ">
       {supplierSideNav ? (
         <h2 className="text-[25px] text-center font-extrabold text-ujenzi-darkgray ml-6 pr-6 mt-14 truncate">
           {profileName}

@@ -91,11 +91,11 @@ export const UjenziCards = ({
 
       {materialPostCard && (
         <div
-          className={`rounded border w-[290px] h-[400px] shadow-md shadow-ujenzi-darkgray bg-ujenzi-darkgray bg-opacity-70 object-fill ml-11 pt-1 px-0.5 ${
+          className={`rounded border w-[290px] h-[400px] shadow-md shadow-ujenzi-darkgray bg-ujenzi-darkgray bg-opacity-70 object-fill pt-1 px-0.5 ${
             homePageCardStyle ? homePageCardStyle : ""
           }`}
         >
-          <img src={imgSrc} className={"h-[60%]"} alt={"material name"} />
+          <img src={imgSrc} className={"h-fit w-full"} alt={"material name"} />
           <div className="h-[40%] w-[100%]  text-ujenzi-white">
             <div className="flex row-span-1 w-[100%] justify-between h-[30%]">
               <div className="grid place-items-center w-[70%] px-1 text-left text-sm font-extrabold">
@@ -132,9 +132,9 @@ export const UjenziCards = ({
             <div className="h-[50%] text-[12px] font-medium px-1">
               {description}
             </div>
-            <div className="h-[20%] px-5 flex place-items-center justify-center">
+            <div className="h-[20%] px-5 flex place-items-center justify-start">
               <span className="line-through text-sm text-left font-light">{`KSH ${previousCost}`}</span>
-              <span className="text-[20px] font-extrabold ml-6">{`KSH ${currentCost}`}</span>
+              <span className="text-[20px] font-extrabold ml-4">{`KSH ${currentCost}`}</span>
             </div>
           </div>
         </div>
