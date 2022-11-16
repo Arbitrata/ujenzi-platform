@@ -28,24 +28,15 @@ class UjenziSingInPage extends UjenziForm {
         body: JSON.stringify(this.state.data),
       });
       const parseRes = await response.json();
-
       if (!parseRes.authorization_token) {
-        // const error = { ...this.state.error };
-        // const message = " wrong password or username"
-        // this.setState({ error:error });
-         return;
+        this.setState({ error: parseRes.error });
+        return;
       } else {
         localStorage.setItem("token", parseRes.authorization_token);
         window.location = "/buyerspage";
-        return;
       }
-    } catch (ex) {
-      if (ex.response && ex.response.status === 400) {
-        const errors = { ...this.state.errors };
-        errors.email = ex.response.data;
-        console.log(this.state.errors.message);
-        this.setState({ errors });
-      }
+    } catch (error) {
+      return null;
     }
   };
 
@@ -82,17 +73,17 @@ class UjenziSingInPage extends UjenziForm {
               "password",
               "w-[450px]"
             )}
+            {this.state.error && (
+              <h1 className="text-[14px] text-center py-2 grid place-item-center mt-2 w-[450px] font-bold text-[#FF3000]">
+                {this.state.error}
+              </h1>
+            )}
             <div className="flex grid-cols-2 gap-3 justify-between w-[450px] pt-6">
               <Link to={"/"}>
                 <UjenziButton buttonText={"back"} />
               </Link>
               {this.renderButton("Sign In")}
             </div>
-            {this.state.error && (
-              <div className="text-[12px] w-[100%] font-bold text-[#FF3000]">
-                {this.state.error}
-              </div>
-            )}
           </form>
         </div>
       </div>

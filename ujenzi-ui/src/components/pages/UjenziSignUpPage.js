@@ -41,7 +41,8 @@ class UjenziSignUpPage extends UjenziForm {
       const perseRes = await response.json();
       localStorage.setItem("token", perseRes.authorization_token);
       if (!perseRes.authorization_token) {
-     return;
+        this.setState({ error: perseRes.error });
+        return;
       }
       window.location = "/buyerspage";
     } catch (err) {
@@ -110,18 +111,17 @@ class UjenziSignUpPage extends UjenziForm {
                 "w-[220px]"
               )}
             </div>
-            {/* {this.state.error && (
-              <div className="text-[12px] w-[100%] font-bold text-[#FF3000]">
+            {this.state.error && (
+              <h1 className="text-[14px] text-center py-2 grid place-item-center mt-2 w-[450px] font-bold text-[#FF3000]">
                 {this.state.error}
-              </div>
-            )} */}
+              </h1>
+            )}
             <div className="flex grid-cols-2 gap-3 w-[450px] justify-between pt-4">
               <Link to={"/"}>
                 <UjenziButton buttonText={"back"} />
               </Link>
               {this.renderButton("Sign Up")}
             </div>
-            {/* {this.state.submitted && <Navigate to={"/dashboard"} />} */}
           </form>
         </div>
       </div>
